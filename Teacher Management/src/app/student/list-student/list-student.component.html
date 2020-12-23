@@ -1,0 +1,28 @@
+<h3 class="text-center p-2">List of Student</h3>
+<hr>
+<a class="btn btn-sm btn-success text-white m-3 mb-3" (click)="AddOrEditStudent(null)"><i class="fa fa-plus mr-3"></i>Add Student</a>
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Type</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="list == null">
+            <td class="font-italic text-center" colspan="3">
+                No Student in there
+            </td>
+        </tr>
+        <tr *ngFor="let student of list">
+            <td (click)="details(student)">{{student.fullName}}</td>
+            <td (click)="details(student)">{{student.type}}</td>
+            <td>
+                <a class="btn btn-sm btn-info text-white" (click)="AddOrEditStudent(student)"><i class="fa fa-sm fa-pencil"></i></a>
+                <a class="btn btn-sm btn-danger text-white ml-1" (click)="deleteStudent(student)"><i class="fa fa-sm fa-trash"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

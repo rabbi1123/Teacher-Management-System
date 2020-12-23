@@ -1,0 +1,22 @@
+<h3 class="text-center">Create Group</h3>
+<form class="container mt-5" #form="ngForm" autocomplete="off" (ngSubmit)="groupCreate(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="group.id">        
+    <div class="form-group">
+        <label>Group Name *</label>
+        <input type="text" #name="ngModel" [(ngModel)]="group.name" name="name" class="form-control" placeholder="Group Name" [class.is-invalid]="!isValid && group.name == ''">
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="text" #date="ngModel" [(ngModel)]="group.date" name="date" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+        <label>Student List</label>
+        <ng-select #list="ngModel" name="list" [items]="items" bindLabel="name" placeholder="Select Student" appendTo="body" multiple="true" [(ngModel)]="selectedItems"></ng-select>
+    </div>
+    <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+</form>
+
+<!-- <div class="container">
+    <ng-select [items]="items" bindLabel="name" placeholder="Select Student" appendTo="body" multiple="true" [(ngModel)]="selected"></ng-select>
+    
+</div> -->

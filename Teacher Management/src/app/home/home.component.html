@@ -1,0 +1,53 @@
+<!-- <p>home works!</p>
+<p *ngIf="user">Logged in: {{user?.email}}</p>
+<button class="btn btn-primary mr-2" *ngIf="user" (click)="logout()">Logout</button>
+<button class="btn btn-primary mr-2" *ngIf="!user" (click)="login()">Login</button> -->
+
+<input type="checkbox" id="check">
+<header>
+  <label for="check">
+    <i class="fas fa-bars" id="sidebar_btn"></i>
+  </label>
+  <div class="left_area">
+    <h2>BATCH <span>Site</span></h2>
+  </div>
+  <div class="right_area">
+    <h4>{{user}}</h4>
+    <a (click)="logout()" class="logout_btn">Logout</a>
+  </div>
+</header>
+<!--mobile navigation bar start -->
+<div class="mobile_nav">
+  <div class="nav_bar">
+    <i (click)="toogleButton()" class="fa fa-bars nav_btn"></i>
+    <h5>{{user}}</h5>
+  </div>
+  <div class="mobile_nav_items">
+    <a routerLink='/Home'><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+    <a routerLink='/ListStudent'><i class="fas fa-cogs"></i><span>Student</span></a>
+    <a routerLink='/ListGroup'><i class="fas fa-table"></i><span>Group</span></a>
+    <a routerLink='/MonthlyPayment'><i class="fas fa-th"></i><span>Monthly Payment</span></a>
+    <a routerLink='/CoursePayment'><i class="fas fa-info-circle"></i><span>Course Payment</span></a>
+    <a routerLink='/HomeStudentPayment'><i class="fas fa-sliders-h"></i><span>Home Payment</span></a>
+    <a routerLink='/ListOtherIncome'><i class="fas fa-sliders-h"></i><span>Other Income</span></a>
+    <a routerLink='/ListOtherExpense'><i class="fas fa-sliders-h"></i><span>Other Expense</span></a>
+    <!-- <a routerLink='/Report'><i class="fas fa-sliders-h"></i><span>Report</span></a> -->
+  </div>
+</div>
+<!--mobile navigation bar end -->
+<div class="sidebar">
+  <a routerLink='/Home'><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+  <a routerLink='/ListStudent'><i class="fas fa-cogs"></i><span>Student</span></a>
+  <a routerLink='/ListGroup'><i class="fas fa-table"></i><span>Group</span></a>
+  <a routerLink='/MonthlyPayment'><i class="fas fa-th"></i><span>Monthly Payment</span></a>
+  <a routerLink='/CoursePayment'><i class="fas fa-info-circle"></i><span>Course Payment</span></a>
+  <a routerLink='/HomeStudentPayment'><i class="fas fa-sliders-h"></i><span>Home Payment</span></a>
+  <a routerLink='/ListOtherIncome'><i class="fas fa-sliders-h"></i><span>Other Income</span></a>
+  <a routerLink='/ListOtherExpense'><i class="fas fa-sliders-h"></i><span>Other Expense</span></a>
+  <!-- <a routerLink='/Report'><i class="fas fa-sliders-h"></i><span>Report</span></a> -->
+</div>
+
+
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

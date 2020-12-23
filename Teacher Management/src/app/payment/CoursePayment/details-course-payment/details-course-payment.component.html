@@ -1,0 +1,29 @@
+<p class="display-5 text-center">Details of Course Student</p>
+<hr>
+<div class="ml-3">
+    <dl class="dl-horizontal">
+        <dt>Student Name</dt>
+        <dd>{{student.name}}</dd>
+
+        <dt>Student Class</dt>
+        <dd>{{student.class}}</dd>
+
+        <dt>Student Course</dt>
+        <dd>{{student.course}}</dd>
+
+        <dt>Student Created Date</dt>
+        <dd>{{student.date}}</dd>
+
+        <dt>Student Amount</dt>
+        <dd>{{student.amount}}</dd>
+
+        <dt>Paid</dt>
+        <dd>{{student.paid == null ? 0 : student.paid}}</dd>
+
+        <dt>Due</dt>
+        <dd>{{student.due}}</dd>
+    </dl>
+</div>
+<hr>
+<button class="btn btn-secondary m-2">Back</button>
+<button (click)="update(student)" class="btn btn-secondary">Add Payment</button>

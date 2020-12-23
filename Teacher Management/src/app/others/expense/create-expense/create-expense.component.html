@@ -1,0 +1,19 @@
+<h5 class="text-center">Create Other Expense</h5>
+<hr>
+<form class="container mt-3" #form="ngForm" autocomplete="off" (ngSubmit)="expenseCreate(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="otherExpense.id">
+    <div class="form-group">
+        <label>Income Description *</label>
+       <textarea rows="4" cols="50" #description="ngModel" [(ngModel)]="otherExpense.description" name="description" class="form-control" placeholder="Expense Description" [class.is-invalid]="!isValid && otherExpense.description == ''">
+        </textarea>
+    </div>
+    <div class="form-group">
+        <label>Amount *</label>
+        <input type="number" #amount="ngModel" [(ngModel)]="otherExpense.amount" name="amount" class="form-control" placeholder="Expense amount" [class.is-invalid]="!isValid && otherExpense.amount == null">
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="text" #date="ngModel" [(ngModel)]="otherExpense.date" name="date" class="form-control" readonly>
+    </div>
+    <button type="submit" class="btn btn-dark"><i class="fa fa-sm fa-database mr-2"></i>Submit</button>
+</form>

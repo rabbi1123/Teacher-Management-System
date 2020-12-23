@@ -1,0 +1,66 @@
+<p mat-dialog-title class="display-6 text-center">{{status}}</p>
+<mat-dialog-content class="mat-typography">
+<form class="container mt-2" #form="ngForm" autocomplete="off" (ngSubmit)="studentCreate(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="student.id">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Full Name *</label>
+            <input type="text" #fullName="ngModel" [(ngModel)]="student.fullName" name="fullName" class="form-control" placeholder="Full Name" [class.is-invalid]="!isValid && student.fullName == ''">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Email</label>
+            <input type="email" #email="ngModel" [(ngModel)]="student.email" name="email" class="form-control" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Phone *</label>
+            <input type="text" #phone="ngModel" [(ngModel)]="student.phone" name="phone" class="form-control" placeholder="Phone" [class.is-invalid]="!isValid && student.phone == ''">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Guardian Name</label>
+            <input type="text" #guardianName="ngModel" [(ngModel)]="student.guardianName" name="guardianName" class="form-control" placeholder="Guardian Name">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Class</label>
+            <input type="text" #class="ngModel" [(ngModel)]="student.class" name="class" class="form-control" placeholder="Class">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Type *</label>
+            <select #type="ngModel" [(ngModel)]="student.type" name="type" class="form-control" [class.is-invalid]="!isValid && student.type == ''">
+                <option value="">Choose...</option>
+                <option value="monthly">Monthly</option>
+                <option value="course">Course</option>
+                <option value="homeTution">Home Tution</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Subject Name</label>
+            <input type="text" #course="ngModel" [(ngModel)]="student.course" name="course" class="form-control" placeholder="Subject">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Amount *</label>
+            <input type="number" #amount="ngModel" [(ngModel)]="student.amount" name="amount" class="form-control" placeholder="Amount" [class.is-invalid]="!isValid && student.amount == null">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Admission Fee</label>
+            <input type="text" #admissionFee="ngModel" [(ngModel)]="student.admissionFee" name="admissionFee" class="form-control" placeholder="Admission Fee">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Date</label>
+            <input type="text" #date="ngModel" [(ngModel)]="student.date" name="date" class="form-control" placeholder="Date" readonly>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-sm btn-dark "><i class="fa fa-database mr-2"></i>Submit</button>
+        <button type="button" class="btn btn-sm btn-outline-dark ml-1" [mat-dialog-close]><i class="fa fa-close mr-2"></i>Close</button>
+    </div>
+
+</form>
+</mat-dialog-content>

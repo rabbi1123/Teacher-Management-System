@@ -1,0 +1,24 @@
+<h3 class="text-center p-2">List of Group</h3>
+<hr>
+<a class="btn btn-sm btn-success text-white m-3 mb-3" (click)="AddOrEditGroup(null)"><i class="fa fa-plus mr-3"></i>Add Group</a>
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Group Name</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let group of groups">
+            <td (click)="details(group)">{{group.name}}</td>
+            <td (click)="details(group)">{{group.date}}</td>
+            <td>
+                <a class="btn btn-sm btn-info text-white" (click)="AddOrEditGroup(group)"><i class="fa fa-sm fa-pencil"></i></a>
+                <a class="btn btn-sm btn-danger text-white ml-1" (click)="deleteGroup(group.id)"><i class="fa fa-sm fa-trash"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

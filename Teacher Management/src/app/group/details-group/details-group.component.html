@@ -1,0 +1,16 @@
+<h5 class="display-5 text-center">Details of the Student</h5>
+<hr>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Group Name</dt>
+        <dd>{{group.name}}</dd>
+
+        <dt>Created Date</dt>
+        <dd>{{group.date}}</dd>
+
+        <dt>Student Name</dt>
+        <dd *ngFor="let item of items">{{item.name}}</dd>
+    </dl>
+</div>
+
+

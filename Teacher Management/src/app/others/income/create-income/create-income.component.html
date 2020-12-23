@@ -1,0 +1,18 @@
+<h5 class="text-center">Create Other Income</h5>
+<form class="container mt-5" #form="ngForm" autocomplete="off" (ngSubmit)="incomeCreate(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="othersIncome.id">
+    <div class="form-group">
+        <label>Income Description *</label>
+       <textarea rows="4" cols="50" #description="ngModel" [(ngModel)]="othersIncome.description" name="description" class="form-control" placeholder="Income Description" [class.is-invalid]="!isValid && othersIncome.description == ''">
+        </textarea>
+    </div>
+    <div class="form-group">
+        <label>Amount *</label>
+        <input type="number" #amount="ngModel" [(ngModel)]="othersIncome.amount" name="amount" class="form-control" placeholder="Income amount" [class.is-invalid]="!isValid && othersIncome.amount == null">
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="text" #date="ngModel" [(ngModel)]="othersIncome.date" name="date" class="form-control" readonly>
+    </div>
+    <button type="submit" class="btn btn-dark"><i class="fa fa-sm fa-database mr-2"></i>Submit</button>
+</form>

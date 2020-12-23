@@ -1,0 +1,24 @@
+<h4 class="text-center">Student Monthly Payment</h4>
+<hr>
+<div class="form-group mb-3 col-md-6">
+    <label>Month</label>
+    <select class="form-control" style="width:50%" #type="ngModel" [(ngModel)]="month" (change)="getMonth(type.value)">
+        <option *ngFor="let m of monthList" [value]="m">{{m}}</option>
+    </select>
+</div>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="display" style="width:80%">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Condition</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let payment of paymentList">
+            <td>{{payment.Name}}</td>
+            <td (click)="changePayment(payment)" *ngIf="payment.Condition == 'paid'"><button class="btn btn-sm btn-success">{{payment.Condition}}</button></td>
+            <td (click)="changePayment(payment)" *ngIf="payment.Condition == 'unpaid'"><button class="btn btn-sm btn-danger">{{payment.Condition}}</button></td>            
+        </tr>
+    </tbody>
+</table>

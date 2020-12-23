@@ -1,0 +1,28 @@
+<h3 class="text-center p-2">Other Income List</h3>
+<hr>
+<a class="btn btn-lsm btn-success text-white m-3" (click)="AddOrEditIncome(null)"><i class="fa fa-plus mr-3"></i>Add Other Income</a>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="display" style="width:80%">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr *ngIf="otherIncomeList == null">
+            <td class="font-italic text-center" colspan="3">
+                No Income in there
+            </td>
+        </tr>
+        <tr *ngFor="let otherIncome of otherIncomeList">
+            <td (click)="details(otherIncome)">{{otherIncome.description}}</td>
+            <td (click)="details(otherIncome)">{{otherIncome.amount}}</td>
+            <td>
+                <a class="btn btn-sm btn-info text-white" (click)="AddOrEditIncome(otherIncome)"><i class="fa fa-sm fa-pencil"></i></a>
+                <a class="btn btn-sm btn-danger text-white ml-1" (click)="deleteIncome(otherIncome.id)"><i class="fa fa-sm fa-trash"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

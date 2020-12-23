@@ -1,0 +1,27 @@
+<h3 class="text-center p-2">Other Expense List</h3>
+<hr>
+<a class="btn btn-sm btn-success text-white m-3" (click)="AddOrEditExpense(null)"><i class="fa fa-plus mr-3"></i>Add Other Expense</a>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="display" style="width:80%">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="otherExpenseList == null">
+            <td class="font-italic text-center" colspan="3">
+                No Expense in there
+            </td>
+        </tr>
+        <tr *ngFor="let otherExpense of otherExpenseList">
+            <td (click)="details(otherExpense)">{{otherExpense.description}}</td>
+            <td (click)="details(otherExpense)">{{otherExpense.amount}}</td>
+            <td>
+                <a class="btn btn-sm btn-info text-white" (click)="AddOrEditExpense(otherExpense)"><i class="fa fa-sm fa-pencil"></i></a>
+                <a class="btn btn-sm btn-danger text-white ml-1" (click)="deleteExpense(otherExpense.id)"><i class="fa fa-sm fa-trash"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+<p class="display-5 text-center">Update Payment</p>
+<hr>
+<div class="row mb-3">
+    <div class="col-md-4"><b>Course Name</b></div>
+    <div class="col-md-6">{{student.course}}</div>
+</div>
+<div class="row mb-3">
+    <div class="col-md-4"><b>Amount</b></div>
+    <div class="col-md-6">{{student.amount}}</div>
+</div>
+<div class="row mb-3">
+    <div class="col-md-4"><b>Paid</b></div>
+    <div class="col-md-6">{{student.paid == null ? 0 : student.paid}}</div>
+</div>
+<div class="row mb-3">
+    <div class="col-md-4"><b>Due</b></div>
+    <div class="col-md-6">{{student.due}}</div>
+</div>
+<div class="row mb-3">
+    <div class="col-md-4"><b>Add Payment</b></div>
+    <div class="col-md-6">
+        <input type="text" [(ngModel)]="amount" class="form-control" placeholder="Payment" [class.is-invalid]="valid">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4"><button (click)="savePayment()" class="btn btn-primary">Save</button></div>
+</div>
