@@ -1,6 +1,6 @@
 # Project Name
 > ## Teacher Management System using Angular and Firebase
-## Table of contents
+# Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
